@@ -10,9 +10,9 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. I was able to construct the character into my game along with applying gravity physics to it when no actions are taken.
+2. My goal is to create the obstacles in the game and have the basic objective of the game (i.e. flying through the openings) implemented by the end of today.
+3. The only blockers I've ran into so far is incorportating a loaded image into the game and having that displayed. However, I've circumvented that for now so I can focus on the core functionality of the game and will come back to the look when I have more time.
 
 # Tuesday
 - [x] What did you achieve yesterday?
