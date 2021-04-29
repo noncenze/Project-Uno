@@ -1,22 +1,23 @@
-# Title of Game
+# FLYING SQUARE GAME
 
-Explanation of the game that was built and the deployed link will go here.
+## Introductions
+A Flappy Bird-esque game with the objective of navigating your `square` through the opening between the top and bottom obstacles to score a point. As long as player's do not touch one of the many spawning objects, they will continue to accrue points. See how far you can go before you get touch one of the obstacles.
 
-# HOW TO PLAY
+## How to play
 
-How to play the game goes here
+Players can use either the `Spacebar` on their keyboard or `left-click` with your mouse to make the `square` to fly. Navigate through the opening and try not to touch any of the obstacles to see how high you can score before you do.
 
 ## Start Up Screen:
-Images of the start up screen go here 
+
+Insert image here once built.
+
 
 # HOW TO INSTALL
 
-## Example
+## GitHub Repository
 1. *`Fork`* and *`Clone`* this respository to your local machine
 2. Open `index.html` in your browser to play or 
 3. Open the directory in your text editor of choice to view or edit the code
-
-Other install instructions will go here
 
 
 # HOW IT WORKS
