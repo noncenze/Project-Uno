@@ -18,9 +18,9 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. I was able to add in the obstacles with functionality into the game. Additionally, I was finally able to implement clicking as an input allowing players to player using either their keyboard (using Spacebar) or their mouse (using clicks) to allow the character to fly.
+2. My goal for today is to implement hit detection and establish the win/lose conditions of the game.
+3. No major blockers as of this moment, but I still haven't been able to implement images instead of blocks. However, I wasn't really looking into it and focused more on the functionality of the game and will address it if I have enough time.
 
 # Wednesday
 - [x] What did you achieve yesterday?
