@@ -187,4 +187,15 @@ function render(){                                          // Render function
     frame++;                                                // Continously increment the frame by 1 for every 'render' loop cycle
     requestAnimationFrame(render);                          // Perform an animation with the render function
 }
-render();                                                   // Invokes the entire 'render' function
+
+
+// STARTS THE GAME
+const startBtn = document.getElementById('start');
+function startGame(){
+    document.addEventListener('click', function(){
+        render();
+    });
+}
+startBtn.onclick = function(){
+    render();
+}

@@ -9,6 +9,11 @@
     margin: 5px auto;
 }
 
+#start {
+    display: block;
+    margin: 5px auto;
+}
+
 p {
     font-family: 'Zen Dots', cursive;
     font-size: 24px;
