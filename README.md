@@ -15,8 +15,8 @@ However, I do plan on updating it as time goes on to improve on it and build a c
 
 ## Installation Guide
 1. Navigate to [this](https://github.com/noncenze/Project-Uno) respository
-2. ![Fork Button](/Screenshots/fork.png) the repository
-3. Locate the ![Code Button](/Screenshots/code.png) button and copy the provided `URL`
+2. ![Fork Button](/Screenshots/Fork.png) the repository
+3. Locate the ![Code Button](/Screenshots/Code.png) button and copy the provided `URL`
 4. Navigate to a directory where the files will be cloned
 5. Make a copy to your local machine with the `git clone` command:
 ```
