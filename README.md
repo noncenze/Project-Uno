@@ -1,8 +1,9 @@
 # KING EXPLOSION MURDER DASH
 
 ## Introductions
-A Flappy Bird-esque game with the objective of navigating your `square` through the opening between the top and bottom obstacles to score a point. <br/>
-As long as player's do not touch one of the many spawning objects, they will continue to accrue points. See how far you can go before you get touch one of the obstacles.
+A Flappy Bird-esque game with the objective of navigating `Bakugou` through the opening between the top and bottom obstacles to score as many points as possible. <br/>
+As long as player's do not touch one of the many spawning objects, they will continue to accrue points. <br/>
+See how far you can go before you get touch one of the obstacles!
 
 ## Project Status
 The core functionality of the game is completed, for the most part. <br/>
