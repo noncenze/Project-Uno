@@ -1,4 +1,4 @@
-# FLYING SQUARE GAME
+# KING EXPLOSION MURDER DASH
 
 ## Introductions
 A Flappy Bird-esque game with the objective of navigating your `square` through the opening between the top and bottom obstacles to score a point. <br/>
@@ -14,10 +14,10 @@ However, I do plan on updating it as time goes on to improve on it and build a c
 
 ## Installation Guide
 1. Navigate to [this](https://github.com/noncenze/Project-Uno) respository
-2. `fork` the repository
-3. Locate the `code` button and copy the provided `URL`
-4. Navigate to a directory where the files will be cloned to
-5. `clone` to your local machine with the following command:
+2. ![Fork Button](/Screenshots/fork.png) the repository
+3. Locate the ![Code Button](/Screenshots/code.png) button and copy the provided `URL`
+4. Navigate to a directory where the files will be cloned
+5. Make a copy to your local machine with the `git clone` command:
 ```
 git clone https://github.com/noncenze/Project-Uno
 ```
@@ -59,7 +59,7 @@ Fancy doodle of me trying to figure out how to address collosion detection.
 ![Box Sketch](/Screenshots/sketch.jpeg)
 
 ## Early Versions
-Early attempts of trying to fine tune the creation of obstacles lead to some difficult/impossible variations. I've debated leaving it this way since it worked. 
+Early attempts of trying to fine tune the creation of obstacles lead to some difficult/impossible variations. I've debated leaving it this way since it worked and makes the game more challenging.
 
 ![Difficult Obstacles](/Screenshots/difficult.png)
 
@@ -70,6 +70,6 @@ Early attempts of trying to fine tune the creation of obstacles lead to some dif
 * Add some enemies or varying obstacles
 * Add special powers abilities
 * Add a multiplayer function to allow players to compete or battle each other
-* Add sprites and images
+* Add nifty animations
 * Add nifty background music and sound effects
 * Add a 'Start' menu

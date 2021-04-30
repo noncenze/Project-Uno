@@ -8,13 +8,18 @@ canvas.width = 400;                                         // Establishes the c
 canvas.height = 600;                                        // Establishes the canvas's height
 const obstacles = [];                                       // Establishing an array placeholder that will be used in the Obstacles function
 let keyPressed = false;                                     // Establishing a keyPressed variable to use for moving the character up
-let score = 0;
-let frame = 0;
-let speed = 2;
-const sprites = new Image();
-sprites.src = '../Images/sprites.png';                      // Image of FlappyBird sprites
+let score = 0;                                              // Score variable; used to keep track of the score in Obstacle function
+let frame = 0;                                              // Frame variable; used to keep determine when to spawn obstacles
 
-
+// IMAGE VARIABLES
+const bakugou = new Image();                                // Image variables; holds the source of the sprites
+const background = new Image();
+const topObstacle = new Image();
+const bottomObstacle = new Image();
+bakugou.src = './Screenshots/baku.png';                     // Image of Bakugou
+background.src = './Screenshots/background.png';            // Image of the background
+topObstacle.src = './Screenshots/top.png';                  // Image of the top pipe
+bottomObstacle.src = './Screenshots/bottom.png';            // Image of the bottom pipe
 
 
 // ========================================================
@@ -24,8 +29,8 @@ class Character {
     constructor(){
         this.x = 25;
         this.y = canvas.height/2;
-        this.width = 40;
-        this.height = 40;
+        this.width = 80;
+        this.height = 80;
         this.velocity = 0;
         this.gravity = 0.5;
     }
@@ -44,8 +49,7 @@ class Character {
         if (keyPressed) this.jump();                        // Activates the jump function whenever 'Space' is pressed
     }
     draw(){
-        ctx.fillStyle = 'blue';                             // Draws a blue square based on the variables established above
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(bakugou, this.x, this.y, this.width, this.height);   // Draws the sprite
     }
     jump(){
         this.velocity -= 2;                                 // Moves the character up; used for Spacebar
@@ -64,20 +68,21 @@ const character = new Character();
 // ========================================================
 class Obstacle {
     constructor() {
-        this.top = (Math.random() * canvas.height/2.5) + 40;     // From top of the canvas to the middle; the length of the top obstacle
-        this.bottom = (Math.random() * canvas.height/2.5) + 40;  // From middle of the canvas to the bottom; the length of the bottom obstacle
+        this.top = (Math.random() * canvas.height/2.5) + 20;     // From top of the canvas to the middle; the length of the top obstacle
+        this.bottom = (Math.random() * canvas.height/2.5) + 20;  // From middle of the canvas to the bottom; the length of the bottom obstacle
         this.x = canvas.width;                              // Where the obstacles start at on the x-axis
         this.size = 80;                                     // Obstacle's size
         this.color = 'black';                               // Obstacle's color
         this.score = false;
+        this.speed = 3;
+
     }
     draw(){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, 0, this.size, this.top);       // Draw the top obstacle
-        ctx.fillRect(this.x, canvas.height - this.bottom, this.size, this.bottom);  // Draw the bottom obstacle
+        ctx.drawImage(topObstacle, this.x, 0, this.size, this.top);                                  // Draw the top obstacle
+        ctx.drawImage(bottomObstacle, this.x, canvas.height - this.bottom, this.size, this.bottom);  // Draw the bottom obstacle
     }
     update(){
-        this.x -= speed;                                    // Moves the obstacle to left based on the speed variable
+        this.x -= this.speed;                               // Moves the obstacle to left based on the speed variable
         if (!this.score && this.x < character.x){           // <--- Keeps count of the score by seeing if the obstacle's x-axis
             score++;                                        //      is less than the character's x-axis meaning it has successfully passed the obstacle
             this.score = true;                              // Prevents the passed obstacle from being scored again
@@ -107,17 +112,16 @@ function moveObstacles(){                                   // moveObstacle func
 
 // CLEARS THE CANVAS
 function clearCanvas(){
-    ctx.fillStyle = "skyblue";                              // <--- Starts in the top left corner (0, 0)
-    ctx.fillRect(0, 0, canvas.width, canvas.height);        //      and goes all the way to the canvas's width and height
-}
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);        // Starts in the top left corner (0, 0)
+}                                                                        // and goes all the way to the canvas's width and height
 
 
 // DISPLAYS THE SCORE
 function displayScore(){
     ctx.fillStyle = 'goldenrod';
     ctx.font = '30px Arial';
-    ctx.strokeText('Current Score: ' + score, 5, 30);
-    ctx.fillText('Current Score: ' + score, 5, 30);
+    ctx.strokeText('Score: ' + score, 5, 30);
+    ctx.fillText('Score: ' + score, 5, 30);
 }
 
 
