@@ -10,8 +10,9 @@ const obstacles = [];                                       // Establishing an a
 let keyPressed = false;                                     // Establishing a keyPressed variable to use for moving the character up
 let score = 0;
 let frame = 0;
+let speed = 2;
 const sprites = new Image();
-sprites.src = '../Images/sprites.png';
+sprites.src = '../Images/sprites.png';                      // Image of FlappyBird sprites
 
 
 
@@ -68,7 +69,6 @@ class Obstacle {
         this.x = canvas.width;                              // Where the obstacles start at on the x-axis
         this.size = 80;                                     // Obstacle's size
         this.color = 'black';                               // Obstacle's color
-        this.speed = 3;                                     // Obstacle's speed
         this.score = false;
     }
     draw(){
@@ -77,7 +77,7 @@ class Obstacle {
         ctx.fillRect(this.x, canvas.height - this.bottom, this.size, this.bottom);  // Draw the bottom obstacle
     }
     update(){
-        this.x -= this.speed;                               // Moves the obstacle to left based on the speed variable
+        this.x -= speed;                                    // Moves the obstacle to left based on the speed variable
         if (!this.score && this.x < character.x){           // <--- Keeps count of the score by seeing if the obstacle's x-axis
             score++;                                        //      is less than the character's x-axis meaning it has successfully passed the obstacle
             this.score = true;                              // Prevents the passed obstacle from being scored again
@@ -87,7 +87,7 @@ class Obstacle {
 }
 
 function moveObstacles(){                                   // moveObstacle function
-    if (frame % 80 === 0) {                                 // Every number divisible by 80 with remainder of 0 adds a new obstacle
+    if (frame % 100 === 0) {                                // Every number divisible by 80 with remainder of 0 adds a new obstacle
         obstacles.unshift(new Obstacle);                    // Adds a new Obstacle into the array based on the frame
     }
     for (let i = 0; i < obstacles.length; i++) {
