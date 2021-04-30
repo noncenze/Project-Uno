@@ -1,6 +1,10 @@
 #canvas {
-    position: absolute;
-    width: 400px;
-    height: 600px;
-    border: 2px solid black;
+    display: block;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#reset {
+    display: block;
+    margin: 5px auto;
 }

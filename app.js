@@ -3,12 +3,15 @@
 // ========================================================
 const canvas = document.getElementById('canvas');           // Grabs the id="canvas" from the HTML
 const ctx = canvas.getContext('2d');                        // Built-in HTML object that allows JavaScript to draw
+const resetBtn = document.getElementById('reset');          // Grabs the Reset button from the HTML
 canvas.width = 400;                                         // Establishes the canvas's width
 canvas.height = 600;                                        // Establishes the canvas's height
 const obstacles = [];                                       // Establishing an array placeholder that will be used in the Obstacles function
 let keyPressed = false;                                     // Establishing a keyPressed variable to use for moving the character up
 let score = 0;
 let frame = 0;
+const sprites = new Image();
+sprites.src = '../Images/sprites.png';
 
 
 
@@ -44,10 +47,10 @@ class Character {
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     jump(){
-        this.velocity -= 2;                                 // Moves the character up
+        this.velocity -= 2;                                 // Moves the character up; used for Spacebar
     }
     click(){
-        this.velocity -= 5;
+        this.velocity -= 5;                                 // Moves the character up; used for clicking
     }
 }
 const character = new Character();
@@ -101,10 +104,15 @@ function moveObstacles(){                                   // moveObstacle func
 // ========================================================
 //                     HELPER FUNCTIONS
 // ========================================================
-function clearCanvas(){                                     // Canvas clearing function
-    ctx.clearRect(0, 0, canvas.width, canvas.height);       // <--- Starts in the top left corner (0, 0)
-}                                                           //      and goes all the way to the canvas's width and height
 
+// CLEARS THE CANVAS
+function clearCanvas(){
+    ctx.fillStyle = "skyblue";                              // <--- Starts in the top left corner (0, 0)
+    ctx.fillRect(0, 0, canvas.width, canvas.height);        //      and goes all the way to the canvas's width and height
+}
+
+
+// DISPLAYS THE SCORE
 function displayScore(){
     ctx.fillStyle = 'goldenrod';
     ctx.font = '30px Arial';
@@ -113,6 +121,18 @@ function displayScore(){
 }
 
 
+// RESETS THE GAME WHEN BUTTON IS CLICKED
+function resetGame(){
+    document.addEventListener('click', function(){
+        window.location.reload();
+    });
+}
+resetBtn.onclick = function(){
+    resetGame();
+}
+
+
+// SPACEBAR-TO-FLY FUNCTIONALITY
 document.addEventListener('keydown', function(e){           // <--- Sets keyPressed variable to true when pressed
     if (e.code === 'Space') keyPressed = true;              //      so character can go up when pressed
 });
@@ -120,7 +140,7 @@ document.addEventListener('keyup', function(e){             // <--- Sets keyPres
     if (e.code === 'Space') keyPressed = false;             //      so character can go down when not pressed
 });
 
-
+// CLICKING-TO-FLY FUNCTIONALITY
 document.addEventListener('click', function(){              // Registers clicks
     character.click();
 });
@@ -160,7 +180,7 @@ function render(){                                          // Render function
     displayScore();                                         // Displays the score
     gameOver();                                             // Invokes the hitObstacles function whenever character runs into an obstacle
     if (gameOver()) return;                                 // Stops the game once an impact is detected
-    requestAnimationFrame(render);                          // Perform an animation with the render function
     frame++;                                                // Continously increment the frame by 1 for every 'render' loop cycle
+    requestAnimationFrame(render);                          // Perform an animation with the render function
 }
 render();                                                   // Invokes the entire 'render' function
