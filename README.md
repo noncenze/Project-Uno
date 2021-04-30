@@ -27,7 +27,13 @@ git clone https://github.com/noncenze/Project-Uno
 
 ## How to play
 Players can use either the `Spacebar` on their keyboard or `left-click` with your mouse to make the `square` to fly. <br/>
+Click on the `Reset` button if your character touched the sides to restart the game. <br/>
 Navigate through the opening and try not to touch any of the obstacles to see how high of a score you can achieve.
+
+## Game Image
+How it looks
+
+![Game Preview](/Screenshots/game.png)
 
 
 
