@@ -1,4 +1,4 @@
-# KING EXPLOSION MURDER DASH
+# SHOUNEN JUMP!
 
 ## Introductions
 A Flappy Bird-esque game with the objective of navigating `Bakugou` through the opening between the top and bottom obstacles to score as many points as possible. <br/>
